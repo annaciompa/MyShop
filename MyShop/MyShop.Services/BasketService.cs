@@ -61,7 +61,7 @@ namespace MyShop.Services
             basketContext.Insert(basket);
             basketContext.Commit();
 
-            HttpCookie cookie = new HttpCookie(BasketSessionName); // in the following block we are writing the cookie into he users machine
+            HttpCookie cookie = new HttpCookie(BasketSessionName); // in the following block we are writing the cookie into the users machine
             cookie.Value = basket.Id;
             cookie.Expires = DateTime.Now.AddDays(1);
             httpContext.Response.Cookies.Add(cookie); // sending it back to the user
